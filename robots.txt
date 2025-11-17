@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Interdire l'accès aux dossiers sensibles
+Disallow: /config/
+Disallow: /includes/
+Disallow: /logs/
+Disallow: /assets/css/
+Disallow: /assets/js/
+
+# Autoriser les images pour les moteurs de recherche
+Allow: /assets/images/
+
+# Sitemap (à créer si nécessaire)
+Sitemap: http://localhost/decoratep/sitemap.xml
