@@ -2,7 +2,12 @@
 // Configuration générale du site DECORATEP
 define('SITE_NAME', 'DECORATEP');
 define('SITE_DESCRIPTION', 'Spécialiste en publicité et décoration publicitaire - Affiches, enseignes lumineuses, totems, panneaux');
-define('SITE_URL', 'http://localhost/decoratep');
+// URL dynamique qui s'adapte à l'environnement
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$path = dirname($_SERVER['SCRIPT_NAME']);
+$site_url = $protocol . '://' . $host . $path;
+define('SITE_URL', rtrim($site_url, '/'));
 define('SITE_EMAIL', 'contact@decoratep.com');
 define('SITE_PHONE', '+225 21 35 42 18');
 define('SITE_ADDRESS', 'Bd du Gabon, près de l\'Hotel Hibiscus<br>Marcory - 11 BP 1577 Abidjan 11<br>Abidjan - Côte d\'Ivoire');
